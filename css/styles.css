@@ -1,0 +1,476 @@
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+#bg-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1;
+    pointer-events: none;
+  }
+
+.blur-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    backdrop-filter: blur(8px);
+    z-index: 0;
+  }
+  
+
+.header {
+    position: relative;
+    height: 100vh; /* ← Esto es clave */
+    overflow: hidden;
+}
+
+.header, .skills, .object, .certifications, .scroll-to-top {
+    position: relative;
+    z-index: 1;
+}
+  
+
+#bg-video::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4); /* Capa oscura encima del video */
+    z-index: -1;  /* Mantiene esta capa detrás del contenido pero delante del video */
+  }
+  
+
+.header .title{
+    margin: 20px 20px;
+    padding: 10px;
+}
+
+.header span{
+    margin: 20px 10px;
+    color: rgb(255, 255, 255);
+    text-shadow: -1px -1px 0 rgb(46, 46, 46);
+    font-weight: bold;
+}
+
+.header h1{
+    margin: 10px 10px;
+    height: 50px;
+    width: 50px;
+    transition-duration: .4s;
+}
+.header h1:hover{
+    transform: scale(1.05);
+}
+
+.header h1 span:first-child:hover{
+    color: rgb(255, 145, 0);
+}
+
+.header h1 span:last-child:hover{
+    color: rgb(255, 68, 0);
+}
+
+.header .nav-bar{
+    padding: 15px;
+    font-size: 18px;
+    font-size: medium;
+    letter-spacing: 2px;
+    margin-top: -10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.nav-bar .container-nav{
+    display: flex;  
+    justify-content: end;
+    gap: 10px;
+    margin: -40px 10px;
+}
+
+.container-nav .item-content{
+    font-size: 19px;
+    margin-left: 10px;
+    color: rgb(255, 255, 255);
+}
+
+.item-content ul li a{
+    padding: 15px;
+    border: 1px solid;
+    border-radius: 50px;
+    color: #ffffff;
+    text-decoration: none;
+
+}
+
+.item-content ul li a:hover{
+    background-color: #a1a1a135;
+    color: rgb(197, 197, 197);
+}
+
+.inicio{
+    margin: auto;
+    padding: 10px;
+}
+
+.inicio .container-inicio{
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    text-align: center;
+    height: 50px;
+    
+}
+
+.container-inicio .content-incio h2{
+    display: flex;
+    font-size: 50px;
+    letter-spacing: 5px;
+    justify-content: center;
+    margin-top: 80px;
+    font-family: 'Playfair Display', serif;
+    color: #c9a84c;
+    font-weight: 700;
+    text-shadow: 1px 1px 0 rgb(255, 255, 255);
+    border-top: 1px solid #fff;
+    border-radius: 50px;
+}
+
+.content-incio p{
+    display: flex;
+    margin-top: 30px;
+    width: 100%;
+    font-family: 'Outfit', sans-serif;
+    color: #f0f0f0;
+    text-shadow: -1px -1px 0 rgb(88,88,88);
+    letter-spacing: 2px;
+    font-size: 25px;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+}
+
+.container-inicio .social-media a{
+    display: inline-block;
+    font-size: 42px;
+    margin: 25px;
+    padding: 5px;
+    border: 1px solid white;
+    border-radius: 50px;
+    transition: .5s;
+    color: white;
+}
+
+.social-media a:first-child:hover{
+    background: #f09433; 
+    background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); 
+    background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+    background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
+}
+
+.social-media a:nth-child(2):hover{
+    background-color: rgb(0, 62, 249);
+}
+
+
+.social-media a:nth-child(4):hover{
+    color: green;
+}
+
+.social-media a:last-child:hover{
+    color: green;
+}
+
+
+.social-media a:hover{
+    transform: scale(1.30);
+}
+
+
+/*SKILLS*/
+
+.skills {
+    height: 100vh;  /* La sección ocupará el 100% de la altura de la pantalla */
+    display: flex;
+    justify-content: center;
+    align-items: center;  /* Centra todo el contenido dentro de la sección */
+    text-align: center;
+}
+
+.content-skills {
+    color: white;  /* Cambié el color de texto a blanco para que se vea mejor sobre el fondo */
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 18px;
+    padding: 20px;
+    line-height: 2;
+    letter-spacing: 2px;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    margin-bottom: 40px;
+}
+
+@keyframes skill{
+    0%{
+        transform: translateY(0);
+    }
+
+    50%{
+        transform: translateY(-24px);
+    }
+
+    100%{
+        transform: translateY(0);
+    }
+}
+
+.content-skills h2{
+    margin-bottom: 50px;
+    font-size: 45px;
+    animation: skill 2s ease-in-out infinite;
+    font-family: 'Playfair Display', serif;
+    color: #e0e0e0 ;
+    font-weight: 700;
+}
+.content-skills p {
+    font-family: 'Outfit', sans-serif;
+    color: #f0f0f0;
+}
+
+/* Contenedor de las habilidades */
+.container-skills {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columnas */
+    grid-template-rows: repeat(2, 1fr); /* 2 filas */
+    gap: 20px; /* Espacio entre los íconos */
+    justify-items: center; /* Centra cada ítem dentro de su celda */
+    margin-right: 50px;
+    width: 100%;  /* Asegura que el contenedor ocupe todo el ancho */
+}
+
+/* Estilos para cada icono */
+.container-skills .icon-skills {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    letter-spacing: 2px;
+    border: 1px solid #ccc;
+    padding: 15px;
+    border-radius: 10px;
+    width: 120px;
+    height: 140px;
+    background-color: rgb(255, 255, 255);
+    transition: transform 0.3s ease;
+}
+
+/* Hover effect */
+.icon-skills:hover {
+    transform: translate(-10px, -20px);  /* Animación al pasar el mouse */
+    background: linear-gradient(to bottom,  #6f1d1d, #ffffff );
+    color: white;
+}
+
+/* Estilos para los íconos dentro de cada habilidad */
+.icon-skills i {
+    font-size: 60px;
+    color: rgb(109, 30, 30);
+    margin-top: 10px;
+}
+
+/* Si deseas cambiar el tamaño del séptimo ícono (por ejemplo), puedes dejar esta regla */
+.container-skills .icon-skills:nth-child(7) i {
+    font-size: 80px;
+}
+
+/*Objects*/
+
+.object{
+    padding: auto;
+    margin: 30px 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    letter-spacing: 2px;
+    color: white;
+}
+
+.container-objects{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row-reverse;
+}
+
+.header-obj{
+    margin: 50px;
+    padding: 20px;
+    border-left: 1px solid white;
+    line-height: 2;
+}
+
+@keyframes girar {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+.header-obj h2{
+    margin-bottom: 55px ;
+    padding: 20px;
+    font-size: 45px;
+    font-weight: 700;
+}
+.header-obj h2, h3 {
+    font-family: 'Playfair Display', serif;
+    color: #e0e0e0;
+}
+
+.header-obj p {
+    font-family: 'Outfit', sans-serif;
+    color: #cccccc;
+    font-size: 25px;
+}
+.header-obj h2 span{
+    background: linear-gradient(to right, #bebebe, #828282); /* colores del degradado */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;;
+    
+}
+
+.header-obj p span{
+    color: #f4a261;
+    font-size: 25px;
+    background: linear-gradient(to right, #ffffff, #bababa); /* colores del degradado */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;;
+}
+
+@keyframes costado{
+    0%{
+        transform: translateX(0);
+    }
+    50%{
+        transform: translateX(24px);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
+
+.content-obj .item-obj h3{
+    animation: costado 2s ease-in-out infinite;
+    background: linear-gradient(to right, #ffffff, #ffaeae); /* colores del degradado */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;;
+    font-weight: 700;
+    border-bottom: 1px solid rgb(255, 255, 255);
+    margin: 20px 0;
+    position: relative;
+    display: inline-block; /* para que se ajuste al contenido */
+    padding-bottom: 10px;  /* espacio para el borde */
+}
+
+.content-obj .item-obj p{
+    line-height: 40px;
+}
+
+/*Certifications*/
+
+.certifications {
+    padding: 40px 20px;
+    text-align: center;
+    color: white;
+}
+
+.contenedor-cert {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.contenido-cert h2 {
+    font-family: 'Playfair Display', serif;
+    color: #e0e0e0;
+    font-weight: 700;
+    letter-spacing: 3px;
+    border-bottom: 1px solid white;
+    display: inline-block;
+    padding-bottom: 10px;
+    margin-bottom: 45px;
+}
+
+.galeria-certificados {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(250px, 1fr)); /* Diseño responsivo */
+    gap: 20px;
+}
+
+.item-cert {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.item-cert img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 8px;
+}
+
+.item-cert:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+}
+
+.item-cert:focus-within img {
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    .galeria-certificados {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    .galeria-certificados {
+        grid-template-columns: 1fr;
+    }
+}
+
+/*Footer*/
+
+/* Diseño para el ícono */
+.scroll-to-top {
+    position: fixed;
+    bottom: 20px; /* Posición en la parte inferior */
+    right: 20px;  /* Posición en la parte derecha */
+    
+    color: rgb(255, 255, 255); /* Color del ícono */
+    border-radius: 50%; /* Bordes redondeados */
+    padding: 15px; /* Espaciado dentro del círculo */
+    font-size: 24px; /* Tamaño del ícono */
+    box-shadow: 0 4px 8px rgb(0, 0, 0); /* Sombra sutil */
+    transition: background-color 0.3s, transform 0.3s; /* Transición suave */
+    text-decoration: none; /* Quitar subrayado */
+}
+
+/* Efecto hover (al pasar el ratón por encima) */
+.scroll-to-top:hover {
+    transform: translateY(-5px); /* Eleva el ícono al hacer hover */
+    color: #e6683c;
+}
