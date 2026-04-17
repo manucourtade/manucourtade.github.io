@@ -6,6 +6,8 @@
     scroll-behavior: smooth;
 }
 
+
+
 #bg-video {
     position: fixed;
     top: 0;
@@ -473,4 +475,16 @@
 .scroll-to-top:hover {
     transform: translateY(-5px); /* Eleva el ícono al hacer hover */
     color: #e6683c;
+}
+
+/*ANIMACION SCROLL*/
+.section-hidden {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.section-visible {
+    opacity: 1;
+    transform: translateY(0);
 }
