@@ -6,8 +6,6 @@
     scroll-behavior: smooth;
 }
 
-
-
 #bg-video {
     position: fixed;
     top: 0;
@@ -17,7 +15,7 @@
     object-fit: cover;
     z-index: -1;
     pointer-events: none;
-  }
+}
 
 .blur-overlay {
     position: fixed;
@@ -27,12 +25,11 @@
     height: 100vh;
     backdrop-filter: blur(8px);
     z-index: 0;
-  }
-  
+}
 
 .header {
     position: relative;
-    height: 100vh; /* ← Esto es clave */
+    height: 100vh;
     overflow: hidden;
 }
 
@@ -40,7 +37,6 @@
     position: relative;
     z-index: 1;
 }
-  
 
 #bg-video::after {
     content: "";
@@ -48,10 +44,9 @@
     top: 0; left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0,0,0,0.4); /* Capa oscura encima del video */
-    z-index: -1;  /* Mantiene esta capa detrás del contenido pero delante del video */
-  }
-  
+    background-color: rgba(0,0,0,0.4);
+    z-index: -1;
+}
 
 .header .title{
     margin: 20px 20px;
@@ -71,6 +66,7 @@
     width: 50px;
     transition-duration: .4s;
 }
+
 .header h1:hover{
     transform: scale(1.05);
 }
@@ -93,7 +89,7 @@
 }
 
 .nav-bar .container-nav{
-    display: flex;  
+    display: flex;
     justify-content: end;
     gap: 10px;
     margin: -40px 10px;
@@ -111,7 +107,6 @@
     border-radius: 50px;
     color: #ffffff;
     text-decoration: none;
-
 }
 
 .item-content ul li a:hover{
@@ -130,7 +125,6 @@
     margin: 20px;
     text-align: center;
     height: 50px;
-    
 }
 
 .container-inicio .content-incio h2{
@@ -173,17 +167,12 @@
 }
 
 .social-media a:first-child:hover{
-    background: #f09433; 
-    background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); 
-    background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
-    background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
+    background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
 }
 
 .social-media a:nth-child(2):hover{
     background-color: rgb(0, 62, 249);
 }
-
 
 .social-media a:nth-child(4):hover{
     color: green;
@@ -193,24 +182,22 @@
     color: green;
 }
 
-
 .social-media a:hover{
     transform: scale(1.30);
 }
 
-
 /*SKILLS*/
 
 .skills {
-    height: 100vh;  /* La sección ocupará el 100% de la altura de la pantalla */
+    height: 100vh;
     display: flex;
     justify-content: center;
-    align-items: center;  /* Centra todo el contenido dentro de la sección */
+    align-items: center;
     text-align: center;
 }
 
 .content-skills {
-    color: white;  /* Cambié el color de texto a blanco para que se vea mejor sobre el fondo */
+    color: white;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 18px;
     padding: 20px;
@@ -223,17 +210,9 @@
 }
 
 @keyframes skill{
-    0%{
-        transform: translateY(0);
-    }
-
-    50%{
-        transform: translateY(-24px);
-    }
-
-    100%{
-        transform: translateY(0);
-    }
+    0%{ transform: translateY(0); }
+    50%{ transform: translateY(-24px); }
+    100%{ transform: translateY(0); }
 }
 
 .content-skills h2{
@@ -241,26 +220,25 @@
     font-size: 45px;
     animation: skill 2s ease-in-out infinite;
     font-family: 'Playfair Display', serif;
-    color: #e0e0e0 ;
+    color: #e0e0e0;
     font-weight: 700;
 }
+
 .content-skills p {
     font-family: 'Outfit', sans-serif;
     color: #f0f0f0;
 }
 
-/* Contenedor de las habilidades */
 .container-skills {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 columnas */
-    grid-template-rows: repeat(2, 1fr); /* 2 filas */
-    gap: 20px; /* Espacio entre los íconos */
-    justify-items: center; /* Centra cada ítem dentro de su celda */
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 20px;
+    justify-items: center;
     margin-right: 50px;
-    width: 100%;  /* Asegura que el contenedor ocupe todo el ancho */
+    width: 100%;
 }
 
-/* Estilos para cada icono */
 .container-skills .icon-skills {
     display: flex;
     flex-direction: column;
@@ -275,33 +253,33 @@
     transition: transform 0.3s ease;
 }
 
-/* Hover effect */
 .icon-skills:hover {
-    transform: translate(-10px, -20px);  /* Animación al pasar el mouse */
-    background: linear-gradient(to bottom,  #0057f8, #ffffff );
+    transform: translate(-10px, -20px);
+    background: linear-gradient(to bottom, #0057f8, #ffffff);
     color: white;
 }
+
 .icon-skills:hover:first-child,
 .icon-skills:hover:nth-child(8) {
-    background: linear-gradient(to bottom,  #f9dc00, #ffffff );
+    background: linear-gradient(to bottom, #f9dc00, #ffffff);
 }
+
 .icon-skills:hover:nth-child(7) {
-    background: linear-gradient(to bottom,  #000000, #ffffff );
+    background: linear-gradient(to bottom, #000000, #ffffff);
 }
+
 .icon-skills:hover:nth-child(2),
 .icon-skills:hover:nth-child(5),
 .icon-skills:hover:nth-child(9) {
-    background: linear-gradient(to bottom,  #ed0000, #ffffff );
+    background: linear-gradient(to bottom, #ed0000, #ffffff);
 }
 
-/* Estilos para los íconos dentro de cada habilidad */
 .icon-skills i {
     font-size: 60px;
     color: rgb(109, 30, 30);
     margin-top: 10px;
 }
 
-/* Si deseas cambiar el tamaño del séptimo ícono (por ejemplo), puedes dejar esta regla */
 .container-skills .icon-skills:nth-child(7) i {
     font-size: 80px;
 }
@@ -331,19 +309,17 @@
 }
 
 @keyframes girar {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
-  }
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
 .header-obj h2{
-    margin-bottom: 55px ;
+    margin-bottom: 55px;
     padding: 20px;
     font-size: 45px;
     font-weight: 700;
 }
+
 .header-obj h2, h3 {
     font-family: 'Playfair Display', serif;
     color: #e0e0e0;
@@ -354,44 +330,38 @@
     color: #cccccc;
     font-size: 25px;
 }
+
 .header-obj h2 span{
-    background: linear-gradient(to right, #bebebe, #828282); /* colores del degradado */
+    background: linear-gradient(to right, #bebebe, #828282);
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;;
-    
+    -webkit-text-fill-color: transparent;
 }
 
 .header-obj p span{
     color: #f4a261;
     font-size: 25px;
-    background: linear-gradient(to right, #ffffff, #bababa); /* colores del degradado */
+    background: linear-gradient(to right, #ffffff, #bababa);
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;;
+    -webkit-text-fill-color: transparent;
 }
 
 @keyframes costado{
-    0%{
-        transform: translateX(0);
-    }
-    50%{
-        transform: translateX(24px);
-    }
-    100%{
-        transform: translateX(0);
-    }
+    0%{ transform: translateX(0); }
+    50%{ transform: translateX(24px); }
+    100%{ transform: translateX(0); }
 }
 
 .content-obj .item-obj h3{
     animation: costado 2s ease-in-out infinite;
-    background: linear-gradient(to right, #ffffff, #ffaeae); /* colores del degradado */
+    background: linear-gradient(to right, #ffffff, #ffaeae);
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;;
+    -webkit-text-fill-color: transparent;
     font-weight: 700;
     border-bottom: 1px solid rgb(255, 255, 255);
     margin: 20px 0;
     position: relative;
-    display: inline-block; /* para que se ajuste al contenido */
-    padding-bottom: 10px;  /* espacio para el borde */
+    display: inline-block;
+    padding-bottom: 10px;
 }
 
 .content-obj .item-obj p{
@@ -425,7 +395,7 @@
 
 .galeria-certificados {
     display: grid;
-    grid-template-columns: repeat(3, minmax(250px, 1fr)); /* Diseño responsivo */
+    grid-template-columns: repeat(3, minmax(250px, 1fr));
     gap: 20px;
 }
 
@@ -450,42 +420,23 @@
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
 }
 
-.item-cert:focus-within img {
-    transform: scale(1.05);
-}
-
-@media (max-width: 768px) {
-    .galeria-certificados {
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    }
-}
-
-@media (max-width: 480px) {
-    .galeria-certificados {
-        grid-template-columns: 1fr;
-    }
-}
-
 /*Footer*/
 
-/* Diseño para el ícono */
 .scroll-to-top {
     position: fixed;
-    bottom: 20px; /* Posición en la parte inferior */
-    right: 20px;  /* Posición en la parte derecha */
-    
-    color: rgb(255, 255, 255); /* Color del ícono */
-    border-radius: 50%; /* Bordes redondeados */
-    padding: 15px; /* Espaciado dentro del círculo */
-    font-size: 24px; /* Tamaño del ícono */
-    box-shadow: 0 4px 8px rgb(0, 0, 0); /* Sombra sutil */
-    transition: background-color 0.3s, transform 0.3s; /* Transición suave */
-    text-decoration: none; /* Quitar subrayado */
+    bottom: 20px;
+    right: 20px;
+    color: rgb(255, 255, 255);
+    border-radius: 50%;
+    padding: 15px;
+    font-size: 24px;
+    box-shadow: 0 4px 8px rgb(0, 0, 0);
+    transition: background-color 0.3s, transform 0.3s;
+    text-decoration: none;
 }
 
-/* Efecto hover (al pasar el ratón por encima) */
 .scroll-to-top:hover {
-    transform: translateY(-5px); /* Eleva el ícono al hacer hover */
+    transform: translateY(-5px);
     color: #e6683c;
 }
 
@@ -500,3 +451,163 @@
     transform: translateY(0);
 }
 
+/* ===================== */
+/*     RESPONSIVE        */
+/* ===================== */
+
+@media (max-width: 768px) {
+
+    /* HEADER */
+    .header {
+        height: auto;
+        min-height: 100vh;
+    }
+
+    /* TITULO */
+    .header h1 {
+        font-size: 26px;
+        width: auto;
+        height: auto;
+    }
+
+    /* NAV */
+    .nav-bar .container-nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 10px 0;
+        gap: 6px;
+    }
+
+    .container-nav .item-content {
+        margin-left: 0;
+    }
+
+    .item-content ul li a {
+        padding: 8px 12px;
+        font-size: 13px;
+    }
+
+    /* QUIEN SOY */
+    .inicio .container-inicio {
+        height: auto;
+        margin: 10px;
+    }
+
+    .container-inicio .content-incio h2 {
+        font-size: 28px;
+        letter-spacing: 2px;
+        margin-top: 30px;
+    }
+
+    .content-incio p {
+        font-size: 15px;
+        letter-spacing: 1px;
+        padding: 0 10px;
+        margin-top: 15px;
+    }
+
+    .container-inicio .social-media a {
+        font-size: 28px;
+        margin: 10px 8px;
+    }
+
+    /* HABILIDADES */
+    .skills {
+        height: auto;
+        padding: 40px 10px;
+        flex-direction: column;
+    }
+
+    .content-skills h2 {
+        font-size: 28px;
+    }
+
+    .content-skills p {
+        font-size: 14px;
+    }
+
+    .container-skills {
+        grid-template-columns: repeat(2, 1fr);
+        margin-right: 0;
+        padding: 10px;
+        gap: 12px;
+    }
+
+    .container-skills .icon-skills {
+        width: 100px;
+        height: 120px;
+    }
+
+    .icon-skills i {
+        font-size: 45px;
+    }
+
+    /* OBJETIVO */
+    .container-objects {
+        flex-direction: column;
+    }
+
+    .header-obj {
+        border-left: none;
+        border-top: 1px solid white;
+        margin: 20px 10px;
+        padding: 10px;
+    }
+
+    .header-obj h2 {
+        font-size: 26px;
+        padding: 10px;
+        margin-bottom: 20px;
+    }
+
+    .header-obj p {
+        font-size: 15px;
+    }
+
+    .content-obj .item-obj p {
+        font-size: 14px;
+        line-height: 26px;
+    }
+
+    .content-obj .item-obj h3 {
+        font-size: 16px;
+    }
+
+    /* CERTIFICACIONES */
+    .galeria-certificados {
+        grid-template-columns: 1fr;
+    }
+
+    .contenido-cert h2 {
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .header h1 {
+        font-size: 20px;
+    }
+
+    .container-inicio .content-incio h2 {
+        font-size: 22px;
+    }
+
+    .content-incio p {
+        font-size: 13px;
+    }
+
+    .container-skills {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .container-skills .icon-skills {
+        width: 85px;
+        height: 100px;
+        padding: 10px;
+    }
+
+    .icon-skills i {
+        font-size: 35px;
+    }
+}
