@@ -21,26 +21,15 @@ function animarAlVerlo(texto, selector) {
         entries.forEach(function(entry) {
             if (entry.isIntersecting) {
                 escribir(texto, selector);
-                observer.unobserve(elemento); // para que no se repita
+            } else {
+                elemento.textContent = ""; // lo borra cuando sale
             }
         });
     });
 
     observer.observe(elemento);
 }
-window.onload = function() {
-    // QUIEN SOY ANIMACION
-    animarAlVerlo('¿Quien soy?', '.content-incio h2');
 
-    // MIS HABILIDADES ANIMACION
-    animarAlVerlo('Mis habilidades', '.content-skills h2');
-
-    // OBJETIVO ANIMACION
-    animarAlVerlo('¿Cual es mi objetivo?', '.container-objects h2');
-
-    //CERTICACIONES ANIMACION
-    animarAlVerlo('Titulos certificados', '.contenedor-cert h2');
-}
 
 function animarSeccion(selector) {
     const elemento = document.querySelector(selector);
@@ -62,6 +51,8 @@ function animarSeccion(selector) {
 window.onload = function() {
     animarAlVerlo('¿Quien soy?', '.content-incio h2');
     animarAlVerlo('Mis habilidades', '.content-skills h2');
+    animarAlVerlo('¿Cual es mi Objetivo?', '.header-obj h2');
+    animarAlVerlo('Titulos certificados', '.contenido-cert h2');
 
     // Agregá las secciones que querés que aparezcan con scroll
     animarSeccion('.skills');

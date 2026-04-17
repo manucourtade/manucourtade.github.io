@@ -278,8 +278,20 @@
 /* Hover effect */
 .icon-skills:hover {
     transform: translate(-10px, -20px);  /* Animación al pasar el mouse */
-    background: linear-gradient(to bottom,  #6f1d1d, #ffffff );
+    background: linear-gradient(to bottom,  #0057f8, #ffffff );
     color: white;
+}
+.icon-skills:hover:first-child,
+.icon-skills:hover:nth-child(8) {
+    background: linear-gradient(to bottom,  #f9dc00, #ffffff );
+}
+.icon-skills:hover:nth-child(7) {
+    background: linear-gradient(to bottom,  #000000, #ffffff );
+}
+.icon-skills:hover:nth-child(2),
+.icon-skills:hover:nth-child(5),
+.icon-skills:hover:nth-child(9) {
+    background: linear-gradient(to bottom,  #ed0000, #ffffff );
 }
 
 /* Estilos para los íconos dentro de cada habilidad */
@@ -477,7 +489,6 @@
     color: #e6683c;
 }
 
-/*ANIMACION SCROLL*/
 .section-hidden {
     opacity: 0;
     transform: translateY(50px);
@@ -488,3 +499,4 @@
     opacity: 1;
     transform: translateY(0);
 }
+
