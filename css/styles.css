@@ -439,6 +439,17 @@ main,
     color: var(--accent);
 }
 
+#arrowBack {
+    border: 1px solid transparent;
+    margin-left: 10px;
+    border-radius: 48px;
+    transition: all .3s ease;
+}
+
+#arrowBack:hover {
+    transform: scale(1.2);
+}
+
 .reveal {
     opacity: 0;
     transform: translateY(18px);
