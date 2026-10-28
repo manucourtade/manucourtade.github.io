@@ -1,0 +1,138 @@
+<template id="scene-backend-template">
+  <div id="root" data-layout="backend" data-palette="dark" data-composition-id="scene-backend" data-start="0" data-width="1920" data-height="1080">
+<div class="backend-left">
+        <p class="eyebrow backend-kicker">BUILT FOR CLARITY</p>
+        <h2 class="backend-title">Thoughtful<br><span class="accent">backend</span><br>engineering.</h2>
+        <p class="backend-copy">Clear APIs. Strong data models. Systems designed to be understood and maintained.</p>
+        <div class="tech-row"><span class="tech-pill">JAVA</span><span class="tech-pill">SPRING BOOT</span><span class="tech-pill">POSTGRESQL</span><span class="tech-pill">DOCKER</span></div>
+      </div>
+      <div class="code-panel"><div class="code-top"><i class="code-dot"></i><i class="code-dot"></i><i class="code-dot"></i><span class="code-file">LibraryService.java</span></div><pre><span class="code-comment">// Designed for real workflows</span>
+<span class="code-key">public class</span> <span class="code-type">LibraryService</span> {
+  <span class="code-key">public</span> Book findBook(
+    <span class="code-type">UUID</span> bookId
+  ) {
+    <span class="code-key">return</span> repository
+      .findById(bookId)
+      .orElseThrow();
+  }
+}</pre></div>
+      <span class="corner-mark">02 / SYSTEMS</span><span class="scene-number">02 — BACKEND</span>
+  <script>
+    // This scene timeline is independently seekable by HyperFrames.
+    const sceneRoot = document.querySelector('[data-composition-id="scene-backend"]');
+    const timeline = gsap.timeline({ paused: true });
+    const revealItems = sceneRoot.querySelectorAll(".backend-kicker, .backend-title, .backend-copy, .tech-pill, .code-panel, .corner-mark");
+    timeline.fromTo(sceneRoot, { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.06 }, 0);
+    timeline.fromTo(revealItems, { autoAlpha: 0, y: 34 }, {
+      autoAlpha: 1, y: 0, duration: 0.72, stagger: 0.09, ease: 'power3.out'
+    }, 0.18);
+    timeline.to(sceneRoot, { autoAlpha: 0, duration: 0.48, ease: 'power2.in' }, 4.62);
+    timeline.set({}, {}, 5.10);
+    window.__timelines = window.__timelines || {};
+    window.__timelines['scene-backend'] = timeline;
+  </script>
+  </div>
+  <style>
+:root {
+      --cream: #f3f1ea;
+      --ink: #17251f;
+      --muted: #65726a;
+      --red: #ce4328;
+      --red-light: #f08a68;
+      --lime: #d5ee79;
+      --forest: #19352b;
+      --serif: Georgia, 'Times New Roman', serif;
+      --sans: Arial, Helvetica, sans-serif;
+      --mono: 'Courier New', monospace;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { width: 100%; height: 100%; margin: 0; overflow: hidden; }
+    body { background: var(--cream); color: var(--ink); font-family: var(--sans); }
+
+    /* Every scene is a timed HyperFrames clip; GSAP controls its visual entrance. */
+    [data-composition-id^="scene-"] { position: absolute; inset: 0; display: flex; overflow: hidden; padding: 150px 190px; }
+    [data-palette="light"] { background: var(--cream); color: var(--ink); }
+    [data-palette="dark"] { background: var(--forest); color: var(--cream); }
+    [data-palette="red"] { background: var(--red); color: #fff9f1; }
+    .eyebrow { margin: 0 0 24px; color: var(--muted); font: 22px/1.2 var(--mono); letter-spacing: .15em; text-transform: uppercase; }
+    [data-palette="dark"] .eyebrow { color: rgba(243,241,234,.65); }
+    [data-palette="red"] .eyebrow { color: rgba(255,249,241,.75); }
+    .accent { color: var(--red); }
+    [data-palette="dark"] .accent { color: var(--lime); }
+    [data-palette="red"] .accent { color: var(--lime); }
+    .hairline { width: 100%; height: 1px; background: currentColor; opacity: .22; }
+    .scene-number { position: absolute; right: 190px; bottom: 92px; color: currentColor; font: 17px var(--mono); opacity: .58; }
+    .corner-mark { position: absolute; top: 75px; right: 190px; font: 18px var(--mono); letter-spacing: .12em; }
+
+    /* Scene 1: a bold, editorial title and hand-built orbital artwork. */
+    [data-layout="intro"] { align-items: center; }
+    .intro-copy { position: relative; z-index: 2; width: 62%; padding-top: 30px; }
+    .intro h1 { margin: 0; font-size: 145px; font-weight: 800; letter-spacing: -.09em; line-height: .83; }
+    .intro h1 .outline { color: transparent; -webkit-text-stroke: 2px var(--ink); }
+    .intro-sub { max-width: 720px; margin: 34px 0 0; color: var(--muted); font-size: 29px; line-height: 1.45; }
+    .intro-availability { display: flex; align-items: center; gap: 13px; margin-top: 48px; font: 17px var(--mono); letter-spacing: .08em; }
+    .availability-dot { width: 12px; height: 12px; border-radius: 50%; background: #79a967; box-shadow: 0 0 0 7px rgba(121,169,103,.13); }
+    .orbit-art { position: absolute; top: 170px; right: 160px; width: 690px; height: 690px; border: 1px solid rgba(23,37,31,.18); border-radius: 50%; }
+    .orbit-art::before, .orbit-art::after { position: absolute; inset: 75px; border: 1px solid rgba(23,37,31,.25); border-radius: 50%; content: ''; }
+    .orbit-art::after { inset: 155px; border-style: dashed; }
+    .orbit-ring { position: absolute; inset: 20px; border: 2px solid var(--red); border-radius: 50%; transform: rotate(-25deg) scaleY(.38); }
+    .orbit-core { position: absolute; top: 50%; left: 50%; color: var(--red); font-size: 152px; font-weight: 800; letter-spacing: -.12em; transform: translate(-50%,-50%) rotate(-9deg); }
+    .orbit-label { position: absolute; top: 155px; right: 22px; padding: 12px 15px; background: var(--cream); font: 16px var(--mono); letter-spacing: .1em; transform: rotate(8deg); }
+    .orbit-spark { position: absolute; top: 100px; left: 50%; color: var(--red); font-size: 54px; }
+
+    /* Scene 2: backend focus, key technologies, and a readable code sample. */
+    [data-layout="backend"] { align-items: center; }
+    .backend-left { width: 56%; }
+    .backend h2, .projects h2, .data h2 { max-width: 980px; margin: 0; font-size: 98px; font-weight: 700; letter-spacing: -.075em; line-height: .95; }
+    .backend-copy { max-width: 790px; margin: 28px 0 0; color: rgba(243,241,234,.72); font-size: 27px; line-height: 1.5; }
+    .tech-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 35px; }
+    .tech-pill { padding: 10px 15px; border: 1px solid rgba(243,241,234,.3); border-radius: 30px; color: var(--cream); font: 15px var(--mono); }
+    .code-panel { position: absolute; top: 260px; right: 190px; width: 560px; padding: 34px; border: 1px solid rgba(243,241,234,.2); background: rgba(0,0,0,.2); box-shadow: 0 30px 80px rgba(0,0,0,.18); }
+    .code-top { display: flex; align-items: center; gap: 9px; margin-bottom: 27px; }
+    .code-dot { width: 11px; height: 11px; border-radius: 50%; background: var(--red-light); }
+    .code-dot:nth-child(2) { background: #e3bd65; }.code-dot:nth-child(3) { background: #8db57a; }
+    .code-file { margin-left: auto; color: rgba(243,241,234,.5); font: 13px var(--mono); }
+    .code-panel pre { margin: 0; color: #d8e5d7; font: 19px/1.8 var(--mono); white-space: pre-wrap; }
+    .code-key { color: #e8ab88; }.code-type { color: var(--lime); }.code-comment { color: #82988a; }
+
+    /* Scene 3: three selected projects with distinct color-coded visual cards. */
+    [data-layout="projects"] { display: block; padding-top: 118px; }
+    .projects h2 { max-width: none; font-size: 82px; }
+    .project-cards { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; margin-top: 55px; }
+    .project-card { position: relative; height: 510px; overflow: hidden; padding: 31px; color: var(--ink); }
+    .project-card:nth-child(1) { background: #c8d3c9; }.project-card:nth-child(2) { background: #d8cdb4; }.project-card:nth-child(3) { background: #ddb79c; }
+    .project-id { position: relative; z-index: 1; font: 15px var(--mono); letter-spacing: .12em; }
+    .project-symbol { position: absolute; top: 86px; right: -20px; display: grid; width: 380px; height: 300px; place-items: center; border: 1px solid rgba(23,37,31,.45); border-radius: 50%; font-size: 80px; font-weight: 800; letter-spacing: -.1em; transform: rotate(-18deg) scaleY(.55); }
+    .project-symbol span { transform: rotate(18deg) scaleY(1.8); }
+    .project-card:nth-child(2) .project-symbol { top: 98px; right: 8px; width: 310px; height: 310px; border-radius: 40%; transform: rotate(25deg); }
+    .project-card:nth-child(2) .project-symbol span { transform: rotate(-25deg); }
+    .project-card:nth-child(3) .project-symbol { top: 110px; right: -35px; width: 360px; height: 280px; transform: rotate(-13deg) scaleY(.5); }
+    .project-card:nth-child(3) .project-symbol span { transform: rotate(13deg) scaleY(2); }
+    .project-name { position: absolute; right: 28px; bottom: 73px; left: 28px; margin: 0; font-size: 35px; font-weight: 700; letter-spacing: -.06em; line-height: 1; }
+    .project-stack { position: absolute; right: 28px; bottom: 31px; left: 28px; font: 13px var(--mono); letter-spacing: .03em; }
+
+    /* Scene 4: a minimal pipeline graphic and data-platform skill stack. */
+    [data-layout="data"] { align-items: center; }
+    .data-left { width: 52%; }
+    .data h2 { font-size: 90px; }
+    .data-copy { max-width: 730px; margin: 26px 0 0; color: rgba(23,37,31,.72); font-size: 26px; line-height: 1.5; }
+    .pipeline { position: absolute; top: 265px; right: 190px; display: grid; grid-template-columns: 170px 50px 170px 50px 170px; align-items: center; }
+    .pipeline-node { display: grid; width: 170px; height: 170px; place-items: center; border: 1px solid rgba(23,37,31,.34); border-radius: 50%; color: var(--ink); font: 17px var(--mono); text-align: center; }
+    .pipeline-node:nth-child(3) { background: var(--lime); border-color: var(--lime); }.pipeline-node:nth-child(5) { background: var(--forest); color: var(--cream); }
+    .pipeline-arrow { color: var(--red); font: 28px var(--mono); text-align: center; }
+    .data-stack { position: absolute; right: 190px; bottom: 190px; color: var(--muted); font: 17px var(--mono); letter-spacing: .1em; }
+
+    /* Scene 5: focused contact close with direct links and a branded end card. */
+    [data-layout="outro"] { display: block; padding-top: 150px; }
+    .outro h2 { max-width: 1280px; margin: 35px 0 0; font-size: 122px; font-weight: 700; letter-spacing: -.09em; line-height: .9; }
+    .outro-email { display: inline-block; margin-top: 45px; padding-bottom: 10px; border-bottom: 2px solid rgba(255,249,241,.8); color: #fff9f1; font-size: 32px; font-weight: 600; }
+    .outro-links { display: flex; gap: 28px; margin-top: 43px; color: rgba(255,249,241,.78); font: 17px var(--mono); }
+    .outro-note { position: absolute; right: 190px; bottom: 92px; color: rgba(255,249,241,.65); font: 14px var(--mono); letter-spacing: .1em; }
+    .scene-tag { position: absolute; right: 190px; top: 88px; font: 16px var(--mono); letter-spacing: .12em; }
+
+    /* HyperFrames captures these fixed compositions one frame at a time. */
+    /* Composition timing and visibility are handled by HyperFrames. */
+
+  </style>
+</template>

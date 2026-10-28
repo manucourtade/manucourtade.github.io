@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Manuel Courtade — Portfolio Reel</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+</head>
+<body>
+  <!-- Each scene is a reusable composition with its own seekable GSAP timeline. -->
+  <div id="root" data-composition-id="portfolio-promo" data-start="0" data-width="1920" data-height="1080">
+    <div id="clip-intro" data-composition-id="scene-intro" data-composition-src="compositions/scene-intro.html" data-start="0" data-track-index="1"></div>
+    <div id="clip-backend" data-composition-id="scene-backend" data-composition-src="compositions/scene-backend.html" data-start="4.1" data-track-index="2"></div>
+    <div id="clip-projects" data-composition-id="scene-projects" data-composition-src="compositions/scene-projects.html" data-start="8.8" data-track-index="3"></div>
+    <div id="clip-data" data-composition-id="scene-data" data-composition-src="compositions/scene-data.html" data-start="14.2" data-track-index="4"></div>
+    <div id="clip-outro" data-composition-id="scene-outro" data-composition-src="compositions/scene-outro.html" data-start="19.9" data-track-index="5"></div>
+    <audio id="music-bed" data-start="0" data-duration="25.8" data-track-index="8" data-volume="0.48" src="assets/portfolio-bed.wav"></audio>
+  </div>
+  <script>
+    // The root timeline defines the full duration; scene timelines are nested by HyperFrames.
+    const timeline = gsap.timeline({ paused: true });
+    timeline.set({}, {}, 25.8);
+    window.__timelines = window.__timelines || {};
+    window.__timelines['portfolio-promo'] = timeline;
+  </script>
+</body>
+</html>
