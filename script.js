@@ -10,6 +10,13 @@ function buildOrbitInterface() {
   const stage = document.querySelector('#orbit-stage');
   const menu = document.querySelector('#orbit-menu');
   const display = document.querySelector('#orbit-display');
+  const closeButton = document.createElement('button');
+  closeButton.className = 'orbit-close';
+  closeButton.type = 'button';
+  closeButton.textContent = '×';
+  closeButton.setAttribute('aria-label', 'Close section');
+  closeButton.hidden = true;
+  display.append(closeButton);
   const sourceSections = [...main.querySelectorAll(':scope > section')];
   const panels = [];
   const tabs = [];
@@ -71,7 +78,7 @@ function buildOrbitInterface() {
   });
 
   main.classList.remove('orbit-building');
-  return { main, stage, menu, display, panels, tabs };
+  return { main, stage, menu, display, closeButton, panels, tabs };
 }
 
 const orbitUi = buildOrbitInterface();
@@ -114,6 +121,7 @@ function activateOrbitPanel(key, finishClose = false) {
   });
 
   orbitUi.stage.classList.toggle('has-open-panel', key !== 'hero');
+  orbitUi.closeButton.hidden = key === 'hero';
   if (key === 'hero') delete orbitUi.main.dataset.panelSide;
   else orbitUi.main.dataset.panelSide = orbitUi.tabs.find(tab => tab.dataset.orbitTarget === key)?.dataset.orbitSide || 'right';
   document.querySelectorAll('.nav-links a[href^="#"]').forEach(link => {
@@ -152,8 +160,15 @@ orbitUi.tabs.forEach(tab => {
     else activate();
   });
 });
+orbitUi.closeButton.addEventListener('click', () => activateOrbitPanel('hero'));
 orbitUi.stage.addEventListener('click', event => {
   if (event.target === orbitUi.stage && orbitUi.stage.classList.contains('has-open-panel')) {
+    activateOrbitPanel('hero');
+  }
+});
+document.addEventListener('click', event => {
+  if (!orbitUi.stage.classList.contains('has-open-panel')) return;
+  if (!orbitUi.display.contains(event.target) && !orbitUi.menu.contains(event.target)) {
     activateOrbitPanel('hero');
   }
 });
@@ -266,7 +281,7 @@ const translations = {
     contactTitle: 'Have a good project<br>in mind<span class="accent">?</span>',
     contactBody: 'Open to new opportunities and thoughtful collaborations.',
     footerMade: '· Full Stack Developer · Argentina', soundEnable: 'Enable portfolio music', soundDisable: 'Mute portfolio music', backTop: 'Back to top', openMenu: 'Open menu',
-    closeMenu: 'Close menu', darkMode: 'Switch to dark mode', lightMode: 'Switch to light mode',
+    closeMenu: 'Close menu', closePanel: 'Close section', darkMode: 'Switch to dark mode', lightMode: 'Switch to light mode',
     navLabel: 'Main navigation', filterLabel: 'Filter projects'
   },
   es: {
@@ -300,7 +315,7 @@ const translations = {
     contactTitle: '¿Tenés un proyecto<br>interesante en mente<span class="accent">?</span>',
     contactBody: 'Abierto a nuevas oportunidades y colaboraciones.',
     footerMade: '· Desarrollador Full Stack · Argentina', soundEnable: 'Activar música del portfolio', soundDisable: 'Silenciar música del portfolio', backTop: 'Volver arriba', openMenu: 'Abrir menú',
-    closeMenu: 'Cerrar menú', darkMode: 'Cambiar a modo oscuro', lightMode: 'Cambiar a modo claro',
+    closeMenu: 'Cerrar menú', closePanel: 'Cerrar sección', darkMode: 'Cambiar a modo oscuro', lightMode: 'Cambiar a modo claro',
     navLabel: 'Navegación principal', filterLabel: 'Filtrar proyectos'
   }
 };
@@ -395,6 +410,7 @@ function renderProjects() {
 function applyLanguage() {
   const text = translations[language];
   root.lang = language;
+  orbitUi.closeButton.setAttribute('aria-label', text.closePanel);
 
   document.querySelectorAll('[data-i18n]').forEach(element => {
     const translation = text[element.dataset.i18n];
