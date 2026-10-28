@@ -139,9 +139,23 @@ orbitUi.tabs.forEach(tab => {
   const activate = () => activateOrbitPanel(tab.dataset.orbitTarget);
   tab.addEventListener('pointerenter', () => window.clearTimeout(panelCloseTimer));
   tab.addEventListener('pointerleave', schedulePanelClose);
-  tab.addEventListener('pointerenter', activate);
-  tab.addEventListener('focus', activate);
-  tab.addEventListener('click', activate);
+  tab.addEventListener('pointerenter', event => {
+    if (event.pointerType !== 'touch') activate();
+  });
+  tab.addEventListener('focus', () => {
+    if (finePointer.matches) activate();
+  });
+  tab.addEventListener('click', event => {
+    const isTouch = event.pointerType === 'touch' || !finePointer.matches;
+    const isCurrentPanel = tab.classList.contains('is-active') && orbitUi.stage.classList.contains('has-open-panel');
+    if (isTouch && isCurrentPanel) activateOrbitPanel('hero');
+    else activate();
+  });
+});
+orbitUi.stage.addEventListener('click', event => {
+  if (event.target === orbitUi.stage && orbitUi.stage.classList.contains('has-open-panel')) {
+    activateOrbitPanel('hero');
+  }
 });
 orbitUi.display.addEventListener('pointerleave', schedulePanelClose);
 activateOrbitPanel('hero');

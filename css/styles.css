@@ -404,11 +404,11 @@ html, body { width: 100%; height: 100%; overflow: hidden; }
   .orbit-menu .section-orbit-title { font-size: 10px; }
   .orbit-menu .section-orbit-index { font-size: 8px; }
   .orbit-display { --panel-width: min(90vw, 720px); }
-  .orbit-stage.has-open-panel .orbit-display { width: min(90vw, 720px); height: min(76svh, 700px); border-radius: 18px; }
-  #main[data-panel-side="right"] .orbit-display { top: 50%; right: auto; left: 50%; width: min(90vw, 720px); transform: translate(-45%, -50%); transform-origin: left center; }
-  #main[data-panel-side="left"] .orbit-display { top: 50%; right: auto; left: 50%; width: min(90vw, 720px); transform: translate(-55%, -50%); transform-origin: right center; }
-  #main[data-panel-side="bottom"] .orbit-display { top: calc(50% - 34svh); right: auto; bottom: auto; left: 50%; width: 90vw; height: min(76svh, 700px); transform: translateX(-50%); }
-  .orbit-panel, .orbit-panel.work-section, .orbit-panel.about-section, .orbit-panel.stack-section, .orbit-panel.credentials-section, .orbit-panel.contact-section, .orbit-panel.reel-section { padding: 18px; }
+  .orbit-stage.has-open-panel .orbit-display { width: min(84vw, 720px); height: min(74svh, 700px); border-radius: 18px; }
+  #main[data-panel-side="right"] .orbit-display { top: 50%; right: auto; left: 50%; width: min(84vw, 720px); transform: translate(-48%, -50%); transform-origin: left center; }
+  #main[data-panel-side="left"] .orbit-display { top: 50%; right: auto; left: 50%; width: min(84vw, 720px); transform: translate(-52%, -50%); transform-origin: right center; }
+  #main[data-panel-side="bottom"] .orbit-display { top: calc(50% - 34svh); right: auto; bottom: auto; left: 50%; width: 84vw; height: min(74svh, 700px); transform: translateX(-50%); }
+  .orbit-panel, .orbit-panel.work-section, .orbit-panel.about-section, .orbit-panel.stack-section, .orbit-panel.credentials-section, .orbit-panel.contact-section, .orbit-panel.reel-section { padding: clamp(20px, 6vw, 26px); }
   .footer { bottom: 8px; }
   .audio-toggle { right: 12px; bottom: 8px; width: 38px; height: 38px; }
 }
