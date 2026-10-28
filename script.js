@@ -13,7 +13,7 @@ function buildOrbitInterface() {
   const closeButton = document.createElement('button');
   closeButton.className = 'orbit-close';
   closeButton.type = 'button';
-  closeButton.textContent = '×';
+  closeButton.innerHTML = '<span aria-hidden="true">×</span><span data-i18n="closeButtonText">Cerrar</span>';
   closeButton.setAttribute('aria-label', 'Close section');
   closeButton.hidden = true;
   display.append(closeButton);
@@ -281,7 +281,7 @@ const translations = {
     contactTitle: 'Have a good project<br>in mind<span class="accent">?</span>',
     contactBody: 'Open to new opportunities and thoughtful collaborations.',
     footerMade: '· Full Stack Developer · Argentina', soundEnable: 'Enable portfolio music', soundDisable: 'Mute portfolio music', backTop: 'Back to top', openMenu: 'Open menu',
-    closeMenu: 'Close menu', closePanel: 'Close section', darkMode: 'Switch to dark mode', lightMode: 'Switch to light mode',
+    closeMenu: 'Close menu', closePanel: 'Close section', closeButtonText: 'Close', darkMode: 'Switch to dark mode', lightMode: 'Switch to light mode',
     navLabel: 'Main navigation', filterLabel: 'Filter projects'
   },
   es: {
@@ -315,7 +315,7 @@ const translations = {
     contactTitle: '¿Tenés un proyecto<br>interesante en mente<span class="accent">?</span>',
     contactBody: 'Abierto a nuevas oportunidades y colaboraciones.',
     footerMade: '· Desarrollador Full Stack · Argentina', soundEnable: 'Activar música del portfolio', soundDisable: 'Silenciar música del portfolio', backTop: 'Volver arriba', openMenu: 'Abrir menú',
-    closeMenu: 'Cerrar menú', closePanel: 'Cerrar sección', darkMode: 'Cambiar a modo oscuro', lightMode: 'Cambiar a modo claro',
+    closeMenu: 'Cerrar menú', closePanel: 'Cerrar sección', closeButtonText: 'Cerrar', darkMode: 'Cambiar a modo oscuro', lightMode: 'Cambiar a modo claro',
     navLabel: 'Navegación principal', filterLabel: 'Filtrar proyectos'
   }
 };
